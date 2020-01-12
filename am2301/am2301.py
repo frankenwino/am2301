@@ -1,5 +1,5 @@
 """Main module."""
-import Adafruit_DHT
+import Adafruit_DHT # https://github.com/adafruit/Adafruit_Python_DHT
 
 def temperature_humidity():
     """
