@@ -19,12 +19,12 @@ def temperature_humidity():
     else:
         pass
 
-    return humidity, temperature
+    return temperature, humidity
 
 pin = 21 # GPIO21 aka Pin 40
 sensor = Adafruit_DHT.AM2302 
 
 if __name__ == '__main__':
-    humidity, temperature = temperature_humidity()
+    temperature, humidity = temperature_humidity()
     print('Humidity:\t{}%'.format(humidity))
     print('Temperature:\t{}c'.format(temperature))
