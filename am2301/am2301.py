@@ -2,7 +2,6 @@
 import Adafruit_DHT # https://github.com/adafruit/Adafruit_Python_DHT
 from time import sleep
 
-
 def temperature_humidity():
     """
     Returns
@@ -18,9 +17,8 @@ def temperature_humidity():
     humidity = round(humidity, 1)
     temperature = round(temperature, 1)
 
-
-
     return temperature, humidity
+
 
 pin = 21 # GPIO21 aka Pin 40
 sensor = Adafruit_DHT.AM2302 
