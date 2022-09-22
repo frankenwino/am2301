@@ -1,21 +1,16 @@
 #!/usr/bin/env python
 
 """Tests for `am2301` package."""
-
-
-import unittest
-
 from am2301 import am2301
 
 
-class TestAm2301(unittest.TestCase):
-    """Tests for `am2301` package."""
+def test_temperature_humidity():
+    # Arrange
+    gpio_pin=4
 
-    def setUp(self):
-        """Set up test fixtures, if any."""
+    # Act
+    temp_celsius, humidity = am2301.temperature_humidity(gpio_pin=gpio_pin)
 
-    def tearDown(self):
-        """Tear down test fixtures, if any."""
-
-    def test_000_something(self):
-        """Test something."""
+    # Assert
+    assert type(temp_celsius) is float
+    assert type(humidity) is float
