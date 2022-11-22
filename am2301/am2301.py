@@ -3,18 +3,18 @@ from time import sleep
 
 
 class AM2301:
-    """AM2301 Uses an AM2301 sensor to get ambient temperature and humidity.
-    """       
+    """AM2301 Uses an AM2301 sensor to get ambient temperature and humidity."""
+
     def __init__(self, gpio_pin: int) -> None:
         """__init__ Constructor
 
         Args:
             gpio_pin (int): the GPIO pin the sensor is attached to.
-        """        
+        """
         self.gpio_pin = gpio_pin
         self.temp_celsius, self.humidity_percent = self.temperature_humidity()
 
-    def temperature_humidity(self) -> tuple[float,float]:
+    def temperature_humidity(self) -> tuple[float, float]:
         """temperature_humidity uses the AM2301 sensor to get ambient temperature and humidity.
 
         Returns:
@@ -42,21 +42,21 @@ class AM2301:
         temp_celsius = round(temp_celsius, 1)
 
         return temp_celsius, humidity
-    
+
     def temperature(self) -> float:
         """temperature gets the ambient temperature in celsius
 
         Returns:
             float: temperature in celsius
-        """        
+        """
         return self.temp_celsius
-    
+
     def humidity(self) -> float:
         """humidity gets the ambient humidity
 
         Returns:
             float: humidity %
-        """        
+        """
         return self.humidity_percent
 
 
@@ -64,8 +64,8 @@ if __name__ == "__main__":
     gpio_pin = 14
     a = AM2301(gpio_pin=gpio_pin)
 
-    temp_celsius = a.temperature
-    humidity = a.humidity
+    temp_celsius = a.temperature()
+    humidity = a.humidity()
 
     print("Humidity:\t{}%".format(humidity))
     print("Celsius:\t{}c".format(temp_celsius))
