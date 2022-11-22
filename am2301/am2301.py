@@ -1,6 +1,6 @@
 import Adafruit_DHT  # https://github.com/adafruit/Adafruit_Python_DHT
 from time import sleep
-
+from typing import Tuple
 
 class AM2301:
     """AM2301 Uses an AM2301 sensor to get ambient temperature and humidity."""
@@ -14,7 +14,7 @@ class AM2301:
         self.gpio_pin = gpio_pin
         self.temp_celsius, self.humidity_percent = self.temperature_humidity()
 
-    def temperature_humidity(self) -> tuple[float, float]:
+    def temperature_humidity(self) -> Tuple[float, float]:
         """temperature_humidity uses the AM2301 sensor to get ambient temperature and humidity.
 
         Returns:
